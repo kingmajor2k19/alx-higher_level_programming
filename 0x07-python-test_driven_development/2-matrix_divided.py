@@ -36,14 +36,14 @@ def matrix_divided(matrix, div):
         if not elems or not isinstance(elems, list):
             raise TypeError(msg_type)
 
-    if len_e != 0 and len(elems) != len_e:
-        raise TypeError(msg_size)
+        if len_e != 0 and len(elems) != len_e:
+            raise TypeError(msg_size)
 
-    for num in elems:
-        if not type(num) in (int, float):
-            raise TypeError(msg_type)
+        for num in elems:
+            if not type(num) in (int, float):
+                raise TypeError(msg_type)
 
-    len_e = len(elems)
+        len_e = len(elems)
 
     m = list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
     return (m)
