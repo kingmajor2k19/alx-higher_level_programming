@@ -18,7 +18,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-    """Initialize a new Base.
+        """Initialize a new Base.
 
         Args:
             id (int): The identity of the new Base.
@@ -99,11 +99,11 @@ class Base:
             with open(filename, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
                 return [cls.create(**d) for d in list_dicts]
-            except IOError:
-                return []
+        except IOError:
+            return []
 
-     @classmethod
-     def save_to_file_csv(cls, list_objs):
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
         """Write the CSV serialization of a list of objects to a file.
 
         Args:
@@ -143,8 +143,8 @@ class Base:
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
                         for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
-            except IOError:
-                return []
+        except IOError:
+            return []
 
     @staticmethod
     def draw(list_rectangles, list_squares):
