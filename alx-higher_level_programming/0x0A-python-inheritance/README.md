@@ -1,1 +1,0 @@
-pytho alx inheritace class
